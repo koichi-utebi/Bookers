@@ -31,10 +31,10 @@
 </table>
 
 <h2>New Book</h2>
-<% if @book.errors.any? %>
+  <% if @book.errors.any? %>
   <div id="error_explanation">
     <h2>
-    <%= @book.errors.count %>erros prohibited this book from being saved;
+    <%= @book.errors.count %>errors prohibited this book from being saved;
     </h2>
     <ul>
     <% @book.errors.full_messages.each do |message| %>
@@ -64,7 +64,7 @@
     <%= f.submit 'Create Book' %>
   </div>
   <% end %>
-  
+
 <% else %>
   <%= form_with model: @book do |f| %>
     <div class="field">
