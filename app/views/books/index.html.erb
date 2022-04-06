@@ -31,6 +31,17 @@
 </table>
 
 <h2>New Book</h2>
+<% if @book.errors.any? %>
+  <h2>
+    <%= @book.errors.count %>erros prohibited this book from being saved;
+  </h2>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @book do |f| %>
   <div class="field">
     <label for="book_title">Title</label>
